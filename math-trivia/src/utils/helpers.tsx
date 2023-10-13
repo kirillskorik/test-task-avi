@@ -1,0 +1,18 @@
+export const shuffleArray = (array: any[]) => {
+  const arrayCopy = [...array]
+
+  for (let i = arrayCopy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arrayCopy[i], arrayCopy[j]] = [arrayCopy[j], arrayCopy[i]]
+  }
+
+  return arrayCopy
+}
+
+export const applyAnswerStyles = (selectedButton: HTMLElement, correct: boolean) => {
+  correct ? selectedButton.classList.add('correct') : selectedButton.classList.add('wrong');
+}
+
+export const resetAnswerStyles = (selectedButton: HTMLElement) => {
+  selectedButton.classList.remove('correct', 'wrong');
+}
